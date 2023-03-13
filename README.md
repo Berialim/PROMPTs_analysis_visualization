@@ -19,7 +19,7 @@ bash /code/identify_enhancers.sh PolII_peak.narrowPeak all_gene_bed_file
 ```
 PROMPT-Finder:
 ```
-bash /code/PROMPT-finder/antisense_main.sh active_gene.bed treated_mark species path_to_code
+bash /code/PROMPT-Finder/antisense_main.sh active_gene.bed treated_mark species path_to_code
 ```
 4sU-seq and TT-seq analysis use the same analysis pipeline:
 ```

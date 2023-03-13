@@ -13,9 +13,9 @@ bash /code/ChIPseq_se.sh species fragment_length effective_genome_size
 Identification of active promoters and enhancers code:
 ```
 # for identify actively promoter
-bash /code/identify_promoters.sh PolII_peak.narrowPeak all_gene_bed_file
+python /code/actively_transcript.py PolII_peak.narrowPeak all_gene_bed_file
 # for identify enhancer
-bash /code/identify_enhancers.sh PolII_peak.narrowPeak all_gene_bed_file
+bash /code/identify_enhancers.sh PolII_peak.narrowPeak all_gene_bed_file BAMfile
 ```
 PROMPT-Finder:
 ```

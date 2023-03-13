@@ -1,4 +1,4 @@
-This github is used for share the analysis code for PROMPTs.
+This github is used for share the analysis code for PROMPTs.   
 Chromatin RNA-seq analysis code:
 ```
 #for paired end

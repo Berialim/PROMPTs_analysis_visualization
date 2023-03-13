@@ -40,6 +40,21 @@ bash /code/predict_u1.sh genome.fa gene.bed
 ```
 Classify gene by predicted U1 site in upatream antisense code:
 ```
-
+# classify gene by 1st U1 site in upstream antisense
 bash /code/sort_1st_distance.py
+# classify gene by U1 sites number in upstream antisense 1kb of TSS
+bash /code/sort_u1_number.py
+```
+Visualization of data through Heatmap, average line plot, boxplots, and violin plots code:
+```
+# plot Heatmap
+bash /code/bw_heatmap.sh bedfile oudir distance bw1 bw2 ...
+# plot Profile
+bash /code/bw_profile.sh bedfile oudir distance bw1 bw2 ...
+# plot separate strand profile
+bash /code/bw_profile_sepstrand.sh bedfile outdir distance
+# plot bxoplot
+Rscript /code/boxplot_sas.R
+Python /code/bed_boxplot.py bedfile distance_to_TSS bam1 bam2 ...
+# plot violin plots same as Transcript balance analysis 
 ```

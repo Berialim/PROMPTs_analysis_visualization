@@ -32,7 +32,7 @@ python /code/RNA_balance.py PROMPT.bed active_gene.bed scalingfactors.txt CTRL.b
 # for TT-seq
 python /code/RNA_balance_no1kb.py PROMPT.bed active_gene.bed scalingfactors.txt CTRL.bam treated.bam
 # for ChIP-seq
-python /code/RNAPII_balance.py PROMPT.bed active_gene.bed  CTRL.bam treated.bam 
+python /code/RNAPII_balance.py PROMPT.bed active_gene.bed outfile_prefix CTRL.bam treated.bam 
 ```
 U1 prediction code:
 ```

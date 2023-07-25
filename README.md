@@ -1,4 +1,45 @@
-This github is used for share the analysis code for PROMPTs.   
+This github is used for share the analysis code for PROMPTs.
+System : Ubuntu(22.04.2)
+
+Software required:
+```
+Trim Galore
+STAR aligner v2.7.9a
+SAMtools v1.7
+deepTools
+featureCounts v2.0.1
+DESeq2
+Picard
+Bedtools v2.30.0
+bigWigToBedGraph
+```
+
+Python3 packages for PROMPT-Finder:
+```
+numpy
+statsmodels
+pybedtools
+matplotlib
+argparse
+```
+
+R packages for further differential analysis and plot:
+```
+DESeq2
+tidyverse
+ggrepel
+pheatmap
+rstatix
+ggpubr 
+eulerr
+```
+
+PROMPT-Finder:
+```
+bash /code/PROMPT-Finder/antisense_main.sh active_gene.bed treated_mark species path_to_code
+```
+
+We also upload code for other analysis in our paper:
 Chromatin RNA-seq analysis code:
 ```
 #for paired end
@@ -17,10 +58,7 @@ python /code/actively_transcript.py PolII_peak.narrowPeak all_gene_bed_file
 # for identify enhancer
 bash /code/identify_enhancers.sh PolII_peak.narrowPeak all_gene_bed_file BAMfile
 ```
-PROMPT-Finder:
-```
-bash /code/PROMPT-Finder/antisense_main.sh active_gene.bed treated_mark species path_to_code
-```
+
 4sU-seq and TT-seq analysis use the same analysis pipeline:
 ```
 bash /code/TT-seq.sh species spike_in_species

@@ -1,4 +1,9 @@
+PROMPT-finder
+=================
 This github is used for share the analysis code for PROMPTs.
+
+System and software require:
+-----------------
 System : Ubuntu(22.04.2)
 
 Software required:
@@ -33,16 +38,48 @@ rstatix
 ggpubr 
 eulerr
 ```
-
-PROMPT-Finder:
+Installation
+-----------------
+Download from GitHub:
 ```
-bash /code/PROMPT-Finder/antisense_main.sh active_gene.bed treated_mark species path_to_code
+git clone https://github.com/Berialim/PROMPTs_analysis_visualization.git
+```
+(Don't need installation. Run scripts in the code folder)
+
+Running for demo
+-----------------
+Running PROMPT-finder(demo)
+```
+bash /code/PROMPT-Finder/antisense_main.sh actively_transcript.bed IAA hg38 path_to_code
 ```
 
-We also upload code for other analysis in our paper:
+Running for your own data
+-----------------
+Required files in the work dictionary:
+```
+BAM files
+database.csv(two columns: name(BAM files prefix), condition(sample treatment))
+actively_transcription.bed (active gene bed file used to identify PROMPTs)
+```
+Required files in /reference/${species}/
+```
+size.genome (recode chromatin size)
+
+```
+Running PROMPT-finder
+```
+bash /code/PROMPT-Finder/antisense_main.sh active_gene.bed treated_mark(in condition of database.csv) species path_to_code
+```
+
+Mainly result is the bed file that detects all PROMPTs in the upstream antisense region of all active genes.
+(Also can get some pre-analysis for PROMPTs)
+
+Other code
+-----------------
+We also upload code for other analyses in our paper:
 Chromatin RNA-seq analysis code:
 ```
-#for paired end
+#for paired-end
 bash /code/chrRNAseq_pe_star.sh hg38
 #for single end
 bash /code/chrRNAseq_se_star.sh hg38

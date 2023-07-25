@@ -10,7 +10,7 @@ select_length = "TRUE"
 # the cutoff of high expression level in ctrl
 args = commandArgs(T)
 cut <- 20
-site_cut <- 500
+site_cut <- 2000
 treated = args[1] #"IAA"
 species = args[2] # "hg38"
 
@@ -189,7 +189,7 @@ volcano(res_ua %>% filter(ID %in%  str_replace(all_ua, "RT_", "")) , "uaall_vol.
     dplyr::select(V4,V2)
   Positive <- left_join(NM_p,RT_p,by = "V4") %>% mutate(site = V2 - V3) %>% dplyr::select(V4,site)
   Negavite <- left_join(NM_m,RT_m,by="V4") %>% mutate(site = V2-V3) %>%  dplyr::select(V4,site)
-  PN <- rbind(Positive,Negavite) %>%  filter(site < site_cut & site > 0)  # %>% filter(V4 %in% name_list)
+  PN <- rbind(Positive,Negavite) %>%  filter(site < site_cut & site > -site_cut)  # %>% filter(V4 %in% name_list)
   PN_list <- PN$V4  ##the list of filtered transcript id
 }
 
@@ -204,7 +204,7 @@ x <- ggplot(PN2,aes(-site))+
   theme(legend.position = 'none') +
   xlab("distance(bp)")+ 
   xlim(c(-2000, 2000))+
-  labs(title = "The distribution of antisense TSS sits" ,subtitle = paste0("n=", nrow(PN2), "   0-", site_cut, "(bp)=", nrow(PN2_300)))+
+  labs(title = "The distribution of antisense TSS sits")+
   theme_classic() + theme()
 x
 ggsave('RT_TSS_site.pdf',width = 2400,height = 1800, dpi = 300, units = "px", plot = x)

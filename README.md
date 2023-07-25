@@ -44,7 +44,7 @@ After installing all necessary packages, download the code and demo from GitHub:
 ```
 git clone https://github.com/Berialim/PROMPTs_analysis_visualization.git
 cd PROMPTs_analysis_visualization
-cp reference /  
+cp -r reference /  
 ```
 (Don't need installation. Run scripts in the code folder)
 

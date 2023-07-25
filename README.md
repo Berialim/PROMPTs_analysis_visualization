@@ -42,8 +42,9 @@ Installation
 -----------------
 After installing all necessary packages, download the code and demo from GitHub:
 ```
-git clone https://github.com/Berialim/PROMPTs_analysis_visualization.git
-cd PROMPTs_analysis_visualization
+wget https://github.com/Berialim/PROMPTs_analysis_visualization/archive/refs/heads/main.zip
+unzip main.zip
+cd PROMPTs_analysis_visualization-main/
 cp -r reference /  
 ```
 (Don't need installation. Run scripts in the code folder)
@@ -52,7 +53,8 @@ Running for demo
 -----------------
 Running PROMPT-finder(demo)
 ```
-bash /code/PROMPT-Finder/antisense_main.sh actively_transcript.bed IAA hg38 path_to_code
+cd demo
+bash ../code/PROMPT-Finder/antisense_main.sh actively_transcripts.bed IAA hg38 ../code/PROMPT-Finder
 ```
 
 Running for your own data
